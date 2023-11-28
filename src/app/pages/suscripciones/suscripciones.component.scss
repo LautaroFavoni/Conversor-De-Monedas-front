@@ -1,0 +1,17 @@
+@use "./../../../assets/styles/forms.scss" ;
+
+main{
+        
+    text-align: center;
+    max-width: 500px;
+    min-height: 80px;
+    gap: 20px;
+    margin:50px;
+    box-shadow: 3px 3px black;
+    border: solid 2px black;
+    padding: 30px;
+    border-radius: 15px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZpORo1Rfp6EW3IFjOQJpS8a0HfgNbYMZx5w&usqp=CAU");
+    background-position: center;
+    background-size: cover;
+}

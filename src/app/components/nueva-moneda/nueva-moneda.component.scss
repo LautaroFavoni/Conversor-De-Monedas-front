@@ -1,0 +1,50 @@
+@use "./../../../assets/styles/variables.scss";
+
+form{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: grey;
+
+}
+
+h2{display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+input{
+    height: 25px;
+    border-radius: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.div-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3px;
+}
+
+button{
+    padding: 10px;
+    color: variables.$color-secundario-claro;
+    text-shadow: 2px 2px 5px black;
+    border-radius: 20px;
+    box-shadow: 5px 5px black;
+    margin: 30px;
+    background-color: variables.$color-principal-claro;
+    width: 100px;
+    
+    
+}
+
+
+
+button:hover{
+background-color: variables.$color-principal;
+cursor: pointer;
+transition: 1s;
+}

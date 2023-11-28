@@ -1,0 +1,36 @@
+.Columna{
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
+        justify-content: center;
+        padding: 5%;
+        background-color: grey;
+        border: 1px solid black;
+    };  
+
+.titulos{
+    
+
+        cursor: pointer;
+        padding: 15px 5px;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        border: 2px solid black;};
+
+
+        p{
+            display:grid;
+        align-items: center;
+        justify-content: center;
+        };
+
+.titulo1{
+    height: 60px;
+    font-size: 25px;
+    background-color: rgb(67, 228, 201);
+}

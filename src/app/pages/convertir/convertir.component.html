@@ -1,0 +1,35 @@
+<div id="container">
+    <div class="flex-column">
+        <form #registerForm="ngForm" (ngSubmit)="Convertir()" class="flex-column">
+            
+            <p>
+                I]ngresa los valores para converitr 
+            </p>
+            <label for="MonedaOrigen" class="sr-only">Moneda de origen</label>
+            <input type="text"  list="lista" name="Monedaorigen" id="Monedaorigen" placeholder="Moneda origen"  [(ngModel)]="ConvertirData.monedaOrigenName" #MonedaOrigen="ngModel">
+
+            <label for="MonedaDestino" class="sr-only">Moneda de destino</label>
+            <input type="text" list="lista" name="Moneda destino" id="Moneda destino" placeholder="Moneda destino" autocomplete="Moneda destino"  required="true" [(ngModel)]="ConvertirData.monedaDestinoName" #MonedaDestino="ngModel">
+            
+            <label for="cantidad" class="sr-only">Cantidad</label>
+            <input type="number" name="cantidad" id="cantidad" placeholder="cantidad" autocomplete="cantidad"  [(ngModel)]="ConvertirData.cantidad" #password="ngModel">
+            <p class="error" *ngIf="password.invalid && (password.touched || password.dirty)">Ingrese una contraseña válida</p>
+            <button type="submit" [disabled]="registerForm.invalid">Convertir</button>
+        
+            <datalist id="lista">
+                <option *ngFor="let moneda of listaDeMonedas" [value]="moneda"></option>
+            </datalist>
+            
+            <P *ngIf="ResultadoData.resultado">El resultado es {{ResultadoData.resultado}}</P>
+        </form>
+        <div class="cuadro">
+            <p>Tu plan es {{SuscripcionActiva.name}} </p>
+            <div *ngIf="tirosRestantes < 100">
+                <p *ngIf="tirosRestantes >= 0">Te quedan {{tirosRestantes}} tiros</p>
+                <p *ngIf="tirosRestantes < 0">Alcanzaste tus cantidad maxima de tiros.</p>
+            </div>
+            <a [routerLink]="['/suscripciones']" routerLinkActive="router-link-active" >Cambiar de plan</a>
+        </div>
+    </div>
+</div>
+

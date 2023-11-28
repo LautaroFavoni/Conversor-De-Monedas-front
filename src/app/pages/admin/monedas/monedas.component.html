@@ -1,0 +1,31 @@
+<p class="titulo1">Lista de Monedas</p>
+
+    <div class="titulos">
+        <p>ID</p>
+        <p>Nombre</p>
+        <p>Sigla</p>
+        <p>Valor</p>
+        <p> </p>
+    </div>
+
+<div *ngFor="let MonedaView of monedas" class="Columna">
+    <p>{{MonedaView.id}}</p>
+    <p> {{MonedaView.name}}</p>
+    <p> {{MonedaView.sigla}}</p> 
+    <p>{{MonedaView.valor}}</p>
+    <div class="cuadro">
+        <button (click)="modalEditar.showModal()">Editar</button>
+    </div>
+    <dialog method="modal" #modalEditar>
+        <app-nueva-moneda (cerrar)="modalEditar.close()"  [Moneda]="MonedaView" >
+            
+            
+            
+        </app-nueva-moneda>
+    </dialog> 
+</div>
+<button class="boton-flotante" (click)="dialogNuevoContacto.showModal()"> Agregar Moneda </button> 
+
+    <dialog method="dialog" #dialogNuevoContacto>
+        <app-nueva-moneda (cerrar)="dialogNuevoContacto.close()" > </app-nueva-moneda>
+    </dialog>

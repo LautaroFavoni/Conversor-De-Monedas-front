@@ -1,0 +1,15 @@
+
+<p class="titulo1">Lista de Usuarios</p>
+<div class="titulos">
+    <p>UserName</p>
+    <p>Email</p>
+    <p>Role</p>
+    <p>Id Categoria</p>
+</div>
+
+<div class="Columna" *ngFor="let UserView of Users">
+    <p> {{UserView.userName}}</p>
+    <p> {{UserView.email}}</p>
+    <p> {{UserView.role}}</p> 
+    <p>{{UserView.categoriaId}}</p>
+</div>

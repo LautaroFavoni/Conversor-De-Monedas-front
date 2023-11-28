@@ -1,0 +1,26 @@
+<form #form='ngForm' (ngSubmit)="onSubmit()">
+    <h2>{{Moneda.id ? "Editar Moneda" : "Nueva Moneda" }}</h2>
+    <div>
+
+        <div class="div-container">
+            <label for="">Nombre</label>
+            <input type="text" [(ngModel)]="Moneda.name" name="nombre">
+        </div>
+        
+        <div class="div-container">
+            <label for="">sigla</label>
+            <input type="text" [(ngModel)]="Moneda.sigla" name="sigla">
+        </div>
+        
+        <div class="div-container">
+            <label for="">Valor</label>
+            <input type="number" [(ngModel)]="Moneda.valor" name="valor">
+        </div>
+
+        <div class="div-container">
+            <button type="submit">{{Moneda.id ? "Editar" : "Crear" }}</button>
+            <button type="button" (click)="cerrar.emit()">Cancelar</button>
+        </div>
+    </div>
+        
+    </form>

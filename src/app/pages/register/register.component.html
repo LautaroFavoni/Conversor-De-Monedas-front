@@ -1,0 +1,30 @@
+<div id="container">
+    <div class="flex-column">
+        <form #registerForm="ngForm" (ngSubmit)="register()" class="flex-column">
+            
+            <p>
+                Ingresá tus credenciales para acceder al servicio de conversiones.
+            </p>
+            <label for="user" class="sr-only">Nombre de usuario</label>
+            <input type="text" name="user" id="user" placeholder="Usuario" autocomplete="username" minlength="4" required="true" [(ngModel)]="registerData.UserName" #user="ngModel">
+            <p class="error" *ngIf="user.invalid && (user.touched || user.dirty)">Ingrese un nombre de usuario válido</p>
+            <label for="nombre" class="sr-only">Email</label>
+            <input type="text" name="nombre" id="nombre" placeholder="nombre" autocomplete="nombre" minlength="3" [(ngModel)]="registerData.Email" #email="ngModel">
+            <p class="error" *ngIf="email.invalid && (email.touched || email.dirty)">Ingrese un nombre válido</p>
+            <label for="password" class="sr-only">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password" minlength="8" [(ngModel)]="registerData.Password" #password="ngModel">
+            <p class="error" *ngIf="password.invalid && (password.touched || password.dirty)">Ingrese una contraseña válida</p>
+            <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+            
+            
+        </form>
+        <p>¿Ya tenés una cuenta? - <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Iniciar sesión</a></p>
+    </div>
+</div>
+
+
+
+
+
+
+
